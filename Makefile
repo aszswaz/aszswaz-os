@@ -31,7 +31,7 @@ $(OS_IMG): $(MBR)
 
 # 编译 MBR 程序
 $(MBR): $(SOURCE)/mbr.asm \
-		$(SOURCE)/config/boot.asm \
+		$(SOURCE)/config/boot.asm $(SOURCE)/config/global.asm \
 		$(OS_LOADER)
 	@./compile/mbr.sh $< $@
 
