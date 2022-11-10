@@ -66,8 +66,10 @@ get_mem_size:
         mov eax, [MEMORY_SZIE]
         cmp eax, [di + 8]
         jnl .get_mem_size_if_end
-            mov eax, [di + 8]
+            mov eax, [di]
             mov [MEMORY_SZIE], eax
+            mov eax, [di + 8]
+            add [MEMORY_SZIE], eax
         .get_mem_size_if_end:
 
         ; di 指向下一个结构体的地址
