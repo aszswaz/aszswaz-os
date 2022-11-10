@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# -chardev 'socket,path=/tmp/gdb-socket,server=on,wait=off,id=gdb0' -gdb 'chardev:gdb0' -S \
+qemu-system-i386 \
+    -name 'guest=aszswaz' \
+    -m 1M \
+    -boot 'menu=on,strict=on' \
+    -drive 'file=build/aszswaz.img,format=raw'
