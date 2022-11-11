@@ -62,7 +62,7 @@ get_mem_size:
         ; 如果 CF 为 1，表示出现异常
         jc .get_mem_size_error
 
-        ; BIOS 会返回多种内存的信息，比如 RAM，只需要获取最大的那一块内存信息即可
+        ; BIOS 会返回多种内存的信息，比如 ROM，只需要获取最大的那一块内存信息即可
         mov eax, [MEMORY_SZIE]
         cmp eax, [di + 8]
         jnl .get_mem_size_if_end
